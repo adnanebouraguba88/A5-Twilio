@@ -1,0 +1,34 @@
+<div class="inbox-container">
+  <h2 class="inbox-title">📩 Inbox</h2>
+
+  <!-- Affichage d'un message d'erreur -->
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Liste des SMS -->
+  <div *ngIf="smsList.length > 0; else noSmsMessage" class="sms-list">
+    <div *ngFor="let sms of smsList | paginate: { itemsPerPage: 2, currentPage: p }" class="sms-card">
+      <div class="sms-header">
+        <strong>To: {{ sms.recipientPhoneNumber }}</strong>
+      </div>
+      <div class="sms-body">
+        <p>{{ sms.message }}</p>
+      </div>
+      <div class="sms-footer">
+        <small>📅 Sent at: {{ sms.sentAt | date: 'short' }}</small>
+      </div>
+    </div>
+    <div class="pagination-controls-wrapper">
+      <!-- Pagination Controls -->
+      <pagination-controls class="pagination-controls" (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+
+  <!-- Message si aucun SMS n'est disponible -->
+  <ng-template #noSmsMessage>
+    <div class="empty-inbox">
+      <p>No messages found. Your inbox is empty! 📭</p>
+    </div>
+  </ng-template>
+</div>

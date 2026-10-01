@@ -1,0 +1,39 @@
+<div class="call-container">
+    <h2>Make a Call</h2>
+    <div class="phone-display">
+      <input
+        type="text"
+        id="phoneNumber"
+        [(ngModel)]="phoneNumber"
+        placeholder="Enter phone number"
+        readonly
+      />
+    </div>
+    <div class="keypad">
+      <div class="key-row">
+        <button (click)="addDigit('1')">1</button>
+        <button (click)="addDigit('2')">2<br /><small>ABC</small></button>
+        <button (click)="addDigit('3')">3<br /><small>DEF</small></button>
+      </div>
+      <div class="key-row">
+        <button (click)="addDigit('4')">4<br /><small>GHI</small></button>
+        <button (click)="addDigit('5')">5<br /><small>JKL</small></button>
+        <button (click)="addDigit('6')">6<br /><small>MNO</small></button>
+      </div>
+      <div class="key-row">
+        <button (click)="addDigit('7')">7<br /><small>PQRS</small></button>
+        <button (click)="addDigit('8')">8<br /><small>TUV</small></button>
+        <button (click)="addDigit('9')">9<br /><small>WXYZ</small></button>
+      </div>
+      <div class="key-row">
+        <button (click)="addDigit('+')">+</button>
+        <button (click)="addDigit('0')">0</button>
+        <button (click)="clearDigit()">✕</button>
+      </div>
+      <div class="key-row">
+        <button (click)="makeCall()" class="call-button">📞</button>
+      </div>
+    </div>
+    <div class="status" *ngIf="callStatus">{{ callStatus }}</div>
+  </div>
+  

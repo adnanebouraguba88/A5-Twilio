@@ -1,0 +1,237 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f4f4f9 0%, #e0e0eb 100%);
+  color: #333;
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Navbar Styling */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #0059b2 0%, #0288d1 100%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  height: 70px;
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+nav h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+nav:hover {
+  background: linear-gradient(90deg, #0288d1 0%, #0059b2 100%);
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+li {
+  margin: 0;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: transform 0.2s, background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover,
+a.router-link-active {
+  background-color: #003d80;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Dropdown Styling */
+.welcome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.dropbtn:hover {
+  color: #0288d1;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #ffffff;
+  min-width: 200px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-content button {
+  background: #0288d1;
+  color: #ffffff;
+  border: none;
+  padding: 12px 15px;
+  text-align: left;
+  width: 100%;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.dropdown-content button:hover {
+  background: #0059b2;
+  transform: translateX(5px);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Profile Image */
+.dropbtn img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.3s ease;
+}
+
+.dropbtn img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Placeholder Avatar */
+.placeholder-avatar {
+  width: 45px;
+  height: 45px;
+  background: #ddd;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.placeholder-avatar:hover {
+  transform: scale(1.1);
+}
+
+/* Centered Title */
+.chat-title-centered {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px auto;
+  color: #0059b2;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    padding: 15px;
+  }
+
+  ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  li {
+    width: 100%;
+  }
+
+  a {
+    text-align: center;
+    padding: 12px;
+  }
+
+  .dropdown-content {
+    left: 0;
+    right: 0;
+    top: auto;
+    transform: translateY(-10px);
+  }
+  .history-button {
+    background-color: #007bff; /* Bleu */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease;
+  }
+
+  .history-button i {
+    font-size: 18px;
+  }
+
+  .history-button:hover {
+    background-color: #0056b3; /* Bleu foncé */
+  }
+
+}

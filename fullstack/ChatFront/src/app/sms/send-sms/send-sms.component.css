@@ -1,0 +1,208 @@
+/* Main Send SMS Container */
+.send-sms-container {
+  background: linear-gradient(135deg, #8e44ad, #6a5acd);
+  border-radius: 20px;
+  padding: 40px;
+  width: 90%;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  animation: slideIn 1s ease-out;
+}
+
+/* Title Styling */
+.form-title {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-out;
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 25px;
+}
+
+/* Label Styling */
+.form-label {
+  display: block;
+  font-size: 16px;
+  color: #f4f4f4;
+  margin-bottom: 10px;
+  font-weight: 500;
+  text-transform: capitalize;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Input and Textarea Styling */
+.form-control {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #2c3e50;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+/* Placeholder Styling */
+.form-control::placeholder {
+  color: #dcdcdc;
+  font-size: 14px;
+}
+
+/* Focus Effect */
+.form-control:focus {
+  border-color: #3498db;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 12px rgba(52, 152, 219, 0.4);
+  transform: scale(1.02);
+}
+
+/* Submit Button Styling */
+.submit-button {
+  background: linear-gradient(145deg, #3498db, #2980b9);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+  margin-top: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon within Button */
+.submit-button i {
+  margin-right: 10px;
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effect on Submit Button */
+.submit-button:hover {
+  background: linear-gradient(145deg, #2980b9, #3498db);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button:hover i {
+  transform: rotate(10deg);
+}
+
+/* Response Message Styling */
+.response-message {
+  background-color: #2ecc71;
+  color: white;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+  text-align: center;
+  position: relative;
+}
+
+/* Pulse Animation for Success Response */
+.response-message::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 130%;
+  height: 130%;
+  background: rgba(46, 204, 113, 0.2);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  transform: translate(-50%, -50%);
+}
+
+.response-message i {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+/* Slide In Animation for the Container */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Animation for Response */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Pulse Animation for Response */
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .send-sms-container {
+    padding: 25px;
+  }
+
+  .form-title {
+    font-size: 30px;
+  }
+
+  .form-control {
+    font-size: 14px;
+  }
+
+  .submit-button {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+
+  .response-message {
+    font-size: 14px;
+  }
+}

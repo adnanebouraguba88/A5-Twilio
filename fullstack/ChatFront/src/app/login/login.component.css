@@ -1,0 +1,193 @@
+/* Container for centering the login form */
+.container {
+  margin-top: 6rem;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Main card with shadow and subtle hover effect */
+.login-card {
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Main title with gradient text and hover effect */
+/* Apply background-clip for all browsers */
+.login-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  background: linear-gradient(45deg, #0288d1, #9b59b6);
+  -webkit-background-clip: text; /* For WebKit browsers */
+  background-clip: text; /* Standard property for all browsers */
+  color: transparent;
+  transition: background 0.3s ease;
+}
+
+.login-title:hover {
+  background: linear-gradient(45deg, #9b59b6, #0288d1);
+  -webkit-background-clip: text; /* For WebKit browsers */
+  background-clip: text; /* Standard property for all browsers */
+  color: transparent;
+}
+
+
+/* Alert box style with a fade-in effect */
+.alert {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframe for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Spacing for the form fields */
+.form-group {
+  margin-bottom: 30px;
+}
+
+/* Input field with enhanced focus effect */
+.input-group {
+  position: relative;
+}
+
+.input-group-text {
+  background-color: #f0f0f0;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  color: #0288d1;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.input-group-text:hover {
+  background-color: #0288d1;
+  transform: scale(1.1);
+  color: white;
+}
+
+.form-control {
+  padding-left: 0.4rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+  border-color: #0288d1;
+  box-shadow: 0 0 10px rgba(2, 136, 209, 0.3);
+}
+
+input[type="text"],
+input[type="password"] {
+  font-size: 1.1rem;
+}
+
+/* Styled login button with gradient and animation */
+button[type="button"] {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  border-radius: 10px;
+  transition: all 0.4s ease, transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+button[type="button"]:hover {
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Subtitle for the sign-up link with hover effect */
+.login-subtitle {
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+  font-size: 1rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.signup-link {
+  color: #0288d1;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.signup-link::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: #0288d1;
+  transition: width 0.4s ease;
+}
+
+.signup-link:hover {
+  color: #1e88e5;
+}
+
+.signup-link:hover::after {
+  width: 100%;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .login-card {
+    padding: 25px;
+  }
+
+  .login-title {
+    font-size: 2.2rem;
+  }
+
+  .form-control {
+    font-size: 1rem;
+  }
+
+  button[type="button"] {
+    font-size: 16px;
+  }
+}

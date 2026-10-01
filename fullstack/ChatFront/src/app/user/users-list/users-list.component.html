@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>Liste des Utilisateurs</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Statut</th>
+        <th>Rôles</th>
+        <th>Actions sur Rôles</th>
+        <th>Suppression</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.status }}</td>
+        <!-- Colonne pour afficher les rôles -->
+        <td>
+          <span *ngFor="let role of user.roles" class="role-badge">
+            {{ role }}
+          </span>
+          <span *ngIf="!user.roles || user.roles.length === 0">Aucun rôle</span>
+        </td>
+        <!-- Colonne pour gérer le rôle ADMIN -->
+        <td>
+          <button
+            (click)="toggleRole(user, 'ADMIN')"
+            [ngClass]="{'add': !user.roles?.includes('ADMIN'), 'remove': user.roles?.includes('ADMIN')}"
+            class="admin-btn">
+            {{ user.roles?.includes('ADMIN') ? 'Retirer ADMIN' : 'Ajouter ADMIN' }}
+          </button>
+        </td>
+        <!-- Colonne pour supprimer l'utilisateur -->
+        <td>
+          <button (click)="deleteUser(user.userId!)" class="delete-btn">
+            Supprimer
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

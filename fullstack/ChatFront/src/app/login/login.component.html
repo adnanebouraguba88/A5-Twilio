@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="login-card">
+          <div class="login-title">Login</div>
+          <div class="alert alert-danger" *ngIf="error == 1">
+            <strong>User authentication failed</strong>
+          </div>
+          <form class="form-group">
+            <div class="mb-3">
+              <label for="email">Email:</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <input type="text" class="form-control" id="email" name="email" [(ngModel)]="user.email" >
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="password">Password:</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password">
+              </div>
+            </div>
+            <button type="button" (click)="onLoggedin()"  class="btn btn-primary" >Login</button>
+          </form>
+          <span class="login-subtitle">Don't have an account? <a routerLink="/register" class="signup-link">Sign up</a></span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  

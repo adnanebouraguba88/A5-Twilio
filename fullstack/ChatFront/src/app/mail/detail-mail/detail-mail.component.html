@@ -1,0 +1,28 @@
+<div class="mail-detail-container" *ngIf="mail">
+    <div class="mail-header">
+      <div class="mail-header-info">
+        <span class="mail-from">{{ mail.recipientEmail }}</span>
+      </div>
+      <h2 class="mail-subject">{{ mail.subject }}</h2>
+      <div class="mail-header-info">
+        
+        <span class="mail-date">{{ mail.sentAt | date: 'fullDate' }}</span>
+      </div>
+    </div>
+  
+    <div class="mail-body">
+      <div class="mail-body-content">
+        <p class="mail-body-text">{{ mail.body }}</p>
+      </div>
+    </div>
+  
+    <div class="action-buttons">
+      <button class="btn-back" (click)="goBack()">Back to Mail List</button>
+    </div>
+  </div>
+  
+  <!-- Fallback if mail is not available -->
+  <div *ngIf="!mail" class="loading-message">
+    <p>Loading mail details...</p>
+  </div>
+  

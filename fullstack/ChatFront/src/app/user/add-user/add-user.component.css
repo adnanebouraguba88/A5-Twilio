@@ -1,0 +1,418 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.container {
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.content form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #9b59b6;
+}
+form .gender-details .gender-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+form .category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+#dot-1:checked~.category label .one,
+#dot-2:checked~.category label .two,
+#dot-3:checked~.category label .three {
+  background: #9b59b6;
+  border-color: #d9d9d9;
+}
+form input[type="radio"] {
+  display: none;
+}
+form .button {
+  height: 45px;
+  margin: 35px 0
+}
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+form .button input:hover {
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+.profile-picture-preview {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.profile-picture-preview img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #9b59b6; /* Optional: adds a border around the image */
+}
+.profile-picture {
+  position: relative;
+  margin-top: 20px;
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(71, 183, 230, 0.1), rgba(155, 89, 182, 0.1)); /* Soft gradient background */
+  border: 2px dashed #9b59b6;
+  border-radius: 12px;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  
+  /* Centering the profile picture container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Centers it horizontally */
+  width: 80%; /* Adjust the width of the container */
+}
+
+.profile-picture:hover {
+  background: linear-gradient(135deg, rgba(71, 183, 230, 0.2), rgba(155, 89, 182, 0.2)); /* Intensify the gradient on hover */
+  border-color: #71b7e6; /* Change border color on hover */
+  transform: scale(1.02); /* Slight scale effect for interaction */
+}
+
+.profile-picture .profile {
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #333;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.profile-picture:hover .profile {
+  color: #9b59b6; /* Change text color on hover */
+  transform: translateY(-3px); /* Slight upward movement on hover */
+}
+
+.profile-picture input[type="file"] {
+  width: 100%;
+  padding: 15px;
+  font-size: 14px;
+  border: none;
+  background-color: #fff;
+  color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.profile-picture input[type="file"] + label {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 14px;
+  background-color: #9b59b6;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-picture input[type="file"]:hover + label,
+.profile-picture input[type="file"]:focus + label {
+  background-color: #71b7e6; /* Change color on hover/focus */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow effect */
+}
+
+.profile-picture input[type="file"]:focus + label {
+  outline: none;
+}
+
+.profile-picture input[type="file"]:disabled + label {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.profile-picture input[type="file"] + label:before {
+  content: "\f15b"; /* FontAwesome camera icon */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+.profile-picture-preview {
+  position: relative;
+  margin-top: -50px;  /* Moves the element upwards */
+  margin-left: 500px;  /* Adds space to the left so it moves right */
+  animation: floating 3s ease-in-out infinite, sparkle 4s infinite alternate; /* Floating + sparkling animation */
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-picture-preview img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #9b59b6; /* Soft border */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Deep shadow for floating effect */
+  transform: scale(0.95) rotate(-10deg); /* Initial rotation for dynamic feel */
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards, pulseGlow 2s ease-in-out infinite; /* Pulse glow effect */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover effects for dynamic interaction */
+.profile-picture-preview img:hover {
+  transform: scale(1.05) rotate(10deg);  /* Slight enlarge and rotate on hover */
+  opacity: 1;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); /* Increased shadow on hover */
+  border-color: #f39c12; /* Glowing gold border on hover */
+}
+
+/* Floating animation for a subtle, calm movement */
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Floating upwards */
+  }
+  100% {
+    transform: translateY(0); /* Return to the base position */
+  }
+}
+
+/* Subtle fading-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-15deg); /* Start smaller and rotated */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg); /* End at normal scale and rotation */
+  }
+}
+
+/* Soft pulse glow effect */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.6); /* Stronger glow */
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Sparkling effect for dynamic light reflections */
+@keyframes sparkle {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.05); /* Slight increase in size */
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.05); /* Slight increase in size */
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.profile-picture-preview img:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+@media (max-width: 584px) {
+  .profile-picture {
+    padding: 20px;
+  }
+
+  .profile-picture .profile {
+    font-size: 18px;
+  }
+
+  .profile-picture input[type="file"] + label {
+    padding: 10px 15px;
+  }
+
+  .profile-picture-preview img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 459px) {
+  .profile-picture {
+    padding: 15px;
+  }
+
+  .profile-picture .profile {
+    font-size: 16px;
+  }
+}
+
+/* Subtitle for the sign-up link with hover effect */
+.login-subtitle {
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+  font-size: 1rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.signup-link {
+  color: #0288d1;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.signup-link::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: #0288d1;
+  transition: width 0.4s ease;
+}
+
+.signup-link:hover {
+  color: #1e88e5;
+}
+
+.signup-link:hover::after {
+  width: 100%;
+}
+/* Responsive media query code for mobile devices */
+@media(max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+  form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category {
+    width: 100%;
+  }
+  .content form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+/* Responsive media query code for mobile devices */
+@media(max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
+}

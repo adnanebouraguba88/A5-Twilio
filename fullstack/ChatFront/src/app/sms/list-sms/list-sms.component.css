@@ -1,0 +1,241 @@
+/* Main Inbox Container */
+.inbox-container {
+  background: radial-gradient(circle, rgba(62, 94, 251, 0.9), rgba(70, 221, 255, 0.8));
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 950px;
+  margin: 40px auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  font-family: 'Montserrat', sans-serif;
+  color: #f4f4f4;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Title Styling */
+.inbox-title {
+  font-size: 36px;
+  font-weight: 800;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.inbox-title::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #3498db;
+  bottom: -10px;
+  left: 0;
+  animation: underline 1s ease-out infinite alternate;
+}
+
+/* Error Message Styling */
+.alert {
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  animation: slideIn 0.7s ease-in-out;
+}
+
+/* SMS List Styling */
+.sms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* SMS Card Styling */
+.sms-card {
+  background: #34495e;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+  border-left: 5px solid #9b59b6;
+}
+
+.sms-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+/* SMS Card Animated Border */
+.sms-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+  animation: pulseBorder 1.5s ease-out infinite;
+}
+
+.sms-header {
+  font-size: 18px;
+  color: #9b59b6;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.sms-body p {
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.7;
+  word-wrap: break-word;
+  font-style: italic;
+}
+
+.sms-footer {
+  text-align: right;
+  font-size: 13px;
+  color: #bdc3c7;
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+/* Pagination Controls */
+.pagination-controls-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+/* Pagination Button Styling */
+.pagination-controls {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin: 0 5px;
+}
+
+.pagination-controls:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.pagination-controls:active {
+  transform: scale(0.98);
+}
+
+/* Empty Inbox Message Styling */
+.empty-inbox {
+  text-align: center;
+  font-size: 22px;
+  color: #dfe6e9;
+  font-style: italic;
+  padding: 40px;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  animation: shake 0.6s ease-out;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseBorder {
+  0% {
+    box-shadow: 0 0 15px #9b59b6;
+  }
+  50% {
+    box-shadow: 0 0 30px #9b59b6;
+  }
+  100% {
+    box-shadow: 0 0 15px #9b59b6;
+  }
+}
+
+@keyframes underline {
+  0% {
+    width: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    width: 100%;
+    transform: scaleX(1.5);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .inbox-container {
+    padding: 20px;
+  }
+
+  .sms-card {
+    padding: 15px;
+  }
+
+  .sms-header {
+    font-size: 16px;
+  }
+
+  .sms-body p {
+    font-size: 14px;
+  }
+
+  .sms-footer {
+    font-size: 12px;
+  }
+
+  .pagination-controls {
+    font-size: 14px;
+  }
+
+  .empty-inbox {
+    font-size: 18px;
+  }
+}

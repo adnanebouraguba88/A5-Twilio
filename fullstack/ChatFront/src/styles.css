@@ -1,0 +1,56 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+  box-sizing: border-box; /* Ensure padding and border are included in dimensions */
+}
+
+/* Universal box-sizing reset */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Wrapper layout */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the wrapper fills the viewport height */
+}
+
+/* Navbar */
+app-navbar {
+  background: linear-gradient(90deg, #0059b2 0%, #0288d1 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space out navbar items */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Keeps navbar visible at the top */
+  top: 0;
+  z-index: 1000;
+  height: 60px;
+}
+
+/* Main content */
+.main-content {
+  flex-grow: 1; /* Allows this section to grow and fill remaining space */
+  margin-top: 10px; /* Reserve space for navbar */
+  overflow-y: auto; /* Ensures scrollability for long content */
+  background-color: #fff;
+  padding: 20px;
+  scroll-behavior: smooth; /* Smooth scrolling for better UX */
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  app-navbar {
+    height: auto; /* Allow navbar height to adjust */
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+}

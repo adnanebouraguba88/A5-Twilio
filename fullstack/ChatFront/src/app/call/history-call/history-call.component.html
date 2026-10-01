@@ -1,0 +1,22 @@
+
+<h2>Call History</h2>
+<table class="call-history-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>To</th>
+      <th>From</th>
+      <th>Call SID</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let call of calls">
+      <td>{{ call.id }}</td>
+      <td>{{ call.toPhoneNumber }}</td>
+      <td>{{ call.fromPhoneNumber }}</td>
+      <td>{{ call.callSid }}</td>
+      <td>{{ call.callTime }}</td>
+    </tr>
+  </tbody>
+</table>

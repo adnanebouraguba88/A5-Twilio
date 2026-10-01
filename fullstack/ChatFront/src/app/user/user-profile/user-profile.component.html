@@ -1,0 +1,45 @@
+<div *ngIf="!isLoading && user" class="profile-container">
+    <div class="profile-header">
+      <img *ngIf="userPhoto" [src]="userPhoto" alt="Profile Picture" class="profile-photo" />
+      <h2>{{ userName }}</h2>
+    </div>
+
+    <div class="profile-details">
+      <div class="details-list">
+
+
+        <div class="detail-card">
+          <div class="icon-container">
+            <i class="fas fa-envelope detail-icon"></i>
+          </div>
+          <div class="detail-content">
+            <div class="detail-label">Email:</div>
+            <div class="detail-value">{{ user.email }}</div>
+          </div>
+        </div>
+
+
+        <div class="detail-card">
+          <div class="icon-container">
+            <i class="fas fa-circle-notch detail-icon"></i>
+          </div>
+          <div class="detail-content">
+            <div class="detail-label">Status:</div>
+            <div class="detail-value">{{ user.status }}</div>
+          </div>
+        </div>
+
+        <div class="detail-card">
+          <div class="icon-container">
+            <i class="fas fa-calendar detail-icon"></i>
+          </div>
+          <div class="detail-content">
+            <div class="detail-label">Created At:</div>
+            <div class="detail-value">{{ user.createdAt | date: 'medium' }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>

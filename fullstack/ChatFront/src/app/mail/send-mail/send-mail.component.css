@@ -1,0 +1,243 @@
+/* General Container */
+.container {
+  width: 100%;
+  max-width: 850px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  background: linear-gradient(45deg, #87CEEB, #b0c4de); /* Bluesky gradient */
+  color: #333;
+  transform: scale(0.98);
+  transition: transform 0.4s ease-in-out;
+}
+
+.container:hover {
+  transform: scale(1);
+}
+
+/* Floating Icon Effect */
+.container::before {
+  content: '✉️'; /* Mail Icon */
+  font-size: 100px;
+  color: rgba(255, 255, 255, 0.1); /* Reduced opacity */
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  animation: floatIcons 4s infinite ease-in-out;
+}
+
+/* Floating Animation */
+@keyframes floatIcons {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(30px, -30px);
+  }
+  50% {
+    transform: translate(0, -60px);
+  }
+  75% {
+    transform: translate(-30px, -30px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Form Heading */
+.container h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 35px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  animation: slideInFromTop 1s ease-out;
+}
+
+/* Heading animation */
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Elements */
+.form-group {
+  position: relative;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.form-group:hover {
+  transform: translateX(5px);
+}
+
+/* Label Styling */
+label {
+  font-size: 18px;
+  color: #227495;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 35px;
+  transition: color 0.3s ease;
+}
+
+label:hover {
+  color: #0288d1; /* Slight color change on hover */
+}
+
+/* Icons Styling for labels */
+label i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: #227495; /* Bluesky color */
+  transition: color 0.3s ease;
+}
+
+/* Input & Textarea Styling */
+input.form-control, textarea.form-control {
+  width: 100%;
+  padding: 18px 40px;
+  font-size: 16px;
+  border: 2px solid #b0c4de; /* Light gray */
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+input.form-control:focus, textarea.form-control:focus {
+  border-color: #87CEEB; /* Bluesky color */
+  outline: none;
+  box-shadow: 0 0 15px rgba(135, 206, 235, 0.5); /* Soft bluesky glow */
+}
+
+/* Hover state */
+input.form-control:hover, textarea.form-control:hover {
+  background-color: #ffffff;
+  transform: scale(1.02);
+}
+
+/* Button Styling */
+button[type="submit"] {
+  background: linear-gradient(45deg, #87CEEB, #b0c4de); /* Bluesky gradient */
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 16px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"] i {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+/* Button Hover Effect */
+button[type="submit"]:hover {
+  background: linear-gradient(45deg, #b0c4de, #87CEEB); /* Inverse gradient on hover */
+  transform: translateY(-5px) rotate(5deg);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* Success Message Styling */
+.mt-3 {
+  margin-top: 25px;
+  font-size: 18px;
+  text-align: center;
+  color: #388e3c; /* Green for success */
+  font-weight: 700;
+  animation: slideUp 0.5s ease-in-out;
+}
+
+/* Slide-in Animation */
+@keyframes slideUp {
+  0% {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Error Message Styling */
+.error-message {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: #f44336; /* Red for errors */
+  font-weight: 600;
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Shake Animation */
+@keyframes shake {
+  0% { transform: translateX(-5px); }
+  25% { transform: translateX(5px); }
+  50% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Custom Placeholder Styling */
+input::placeholder, textarea::placeholder {
+  color: #b0c4de; /* Light gray */
+  opacity: 0.8;
+  font-style: italic;
+  transition: opacity 0.3s ease;
+}
+
+input:focus::placeholder, textarea:focus::placeholder {
+  opacity: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      padding: 35px;
+      width: 90%;
+  }
+
+  .container h2 {
+      font-size: 30px;
+  }
+
+  button[type="submit"] {
+      font-size: 18px;
+      padding: 14px 28px;
+  }
+
+  input.form-control, textarea.form-control {
+      padding: 15px 35px;
+  }
+}

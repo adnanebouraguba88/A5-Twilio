@@ -1,0 +1,28 @@
+# Large ZIP archive
+fullstack.zip
+
+# Node.js dependencies
+fullstack/**/node_modules/
+
+# Angular build files
+fullstack/**/.angular/
+
+# Java/Maven build files
+fullstack/**/target/
+
+# Environment/config files
+fullstack/**/.env
+# Secrets
+fullstack/chatBack/src/main/resources/application.properties
+.env
+
+# Uploaded files
+fullstack/chatBack/uploads/
+
+# Java
+fullstack/chatBack/target/
+
+# Angular
+fullstack/ChatFront/node_modules/
+fullstack/ChatFront/.angular/application.properties
+application.properties

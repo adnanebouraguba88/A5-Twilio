@@ -1,0 +1,39 @@
+<div class="mail-container">
+  <header class="mail-header">
+    <h1>📥 Inbox</h1>
+  </header>
+
+  <!-- Loading indicator -->
+  <div *ngIf="loading" class="loading">
+    Loading emails...
+  </div>
+
+  <!-- Error message -->
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+
+  <!-- Emails Table -->
+  <div *ngIf="!loading && mails.length > 0" class="mail-list">
+    <div class="mail-item" *ngFor="let mail of mails | paginate: { itemsPerPage: 2, currentPage: p }">
+      <div class="mail-icon">✉️</div>
+      <div class="mail-sender">{{ mail.recipientEmail }}</div>
+      <div class="mail-details">
+        <span class="mail-subject">{{ mail.subject }}</span>
+      </div>
+      <div class="mail-date">{{ mail.sentAt | date: 'short' }}</div>
+      
+        <button class="see-details-btn"   [routerLink]="['/detail-mail', mail.mailId]"> See Details </button>
+
+    </div>
+    <div class="pagination-controls-wrapper">
+      <!-- Pagination Controls -->
+      <pagination-controls class="pagination-controls" (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+
+  <!-- No emails message -->
+  <div *ngIf="!loading && mails.length === 0" class="no-mails">
+    No emails found.
+  </div>
+</div>

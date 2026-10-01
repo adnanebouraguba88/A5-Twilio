@@ -1,0 +1,94 @@
+<nav>
+  <h1 class="chat-title">Chat</h1>
+  <ul *ngIf="authService.isloggedIn; ">
+    <!-- Display the logged-in user's name and profile photo -->
+
+    <!-- Conditionally show the appropriate dashboard link -->
+    <li *ngIf="authService.isAdmin()">
+      <div class="dropdown">
+        <a class="dropbtn">
+      <a [routerLink]="'/admin-dashboard'">Admin Dashboard</a>
+      </a>
+      </div>
+    </li>
+    <li *ngIf="authService.isUser()">
+      <div class="dropdown">
+        <a class="dropbtn">
+      <a [routerLink]="'/user-dashboard'">Home</a>
+
+      </a>
+      </div>
+
+    </li>
+    <li class="welcome">
+
+      <div class="dropdown">
+        <a class="dropbtn">
+          <i class="fa fa-envelope" aria-hidden="true"></i> Mail
+        </a>
+        <div class="dropdown-content">
+          <button [routerLink]="'/mail-list'">
+            <i class="fa-solid fa-paper-plane"></i> Sent Mails
+          </button>
+          <button [routerLink]="'/mail'">
+            <i class="fa fa-pencil" aria-hidden="true"></i>  New Mail
+          </button>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a class="dropbtn">
+          <i class="fa fa-sms" aria-hidden="true"></i> SMS
+        </a>
+        <div class="dropdown-content">
+          <button [routerLink]="'/smsList'">
+            <i class="fa-solid fa-paper-plane"></i> Sent SMSes
+          </button>
+          <button [routerLink]="'/sms'">
+            <i class="fa fa-pencil" aria-hidden="true"></i>  New SMS
+          </button>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a class="dropbtn">
+          <i class="fa fa-phone" aria-hidden="true"></i> Call
+        </a>
+        <div class="dropdown-content">
+          <button [routerLink]="'/call'">
+            <i class="fa-solid fa-phone"></i> Make Call
+          </button>
+          <button [routerLink]="'/historyCall'" class="history-button">
+            <i class="fa-solid fa-clock-rotate-left"></i> History Calls
+          </button>
+
+        </div>
+      </div>
+    <li class="welcome">
+
+      <div class="dropdown">
+        <a class="dropbtn">
+          <!-- Display profile photo if available, else show placeholder avatar -->
+          <img *ngIf="authService.userPhoto; else placeholder"
+               [src]="authService.userPhoto"
+               alt="User Profile Picture"
+               width="50" height="50" />
+          <ng-template #placeholder>
+            <div class="placeholder-avatar">👤</div> <!-- Default icon when image is missing -->
+          </ng-template>
+          <span>Welcome, {{ authService.userName || 'User' }}</span>
+        </a>
+        <div class="dropdown-content">
+          <button [routerLink]="'/profile'">
+            <i class="fa fa-user" aria-hidden="true"></i> Profile
+          </button>
+
+          <button (click)="logout()">
+            <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+
+</nav>

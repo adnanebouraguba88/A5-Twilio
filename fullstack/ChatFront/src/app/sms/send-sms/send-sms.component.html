@@ -1,0 +1,44 @@
+<div class="send-sms-container">
+  <h2 class="form-title">📤 Send SMS</h2>
+  <form (ngSubmit)="sendSms()" class="sms-form">
+    <!-- Recipient Phone Number -->
+    <div class="form-group">
+      <label for="recipientPhoneNumber" class="form-label">
+        <i class="fas fa-phone-alt"></i> To:
+      </label>
+      <input
+        type="tel"
+        class="form-control"
+        id="recipientPhoneNumber"
+        [(ngModel)]="recipientPhoneNumber"
+        name="recipientPhoneNumber"
+        placeholder="+1234567890"
+        required />
+    </div>
+
+    <!-- Message -->
+    <div class="form-group">
+      <label for="message" class="form-label">
+        <i class="fas fa-comment-dots"></i> Message:
+      </label>
+      <textarea
+        class="form-control"
+        id="message"
+        [(ngModel)]="message"
+        name="message"
+        rows="5"
+        placeholder="Type your message here..."
+        required></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary submit-button">
+      <i class="fas fa-paper-plane"></i> Send SMS
+    </button>
+  </form>
+
+  <!-- Response Message -->
+  <div *ngIf="responseMessage" class="response-message">
+    <p>{{ responseMessage }}</p>
+  </div>
+</div>

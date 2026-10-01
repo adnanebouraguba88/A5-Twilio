@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="title">Registration Form</div>
+  <div class="content">
+    <!-- Display profile picture if selected -->
+    <div *ngIf="selectedFile" class="profile-picture-preview">
+      <img [src]="imageUrl" alt="Profile Picture Preview" />
+    </div>
+
+    <form (ngSubmit)="addUser()">
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details">Username</span>
+          <input
+            id="username"
+            type="text"
+            placeholder="Enter your username"
+            [(ngModel)]="newUser.username"
+            name="username"
+            required
+            autocomplete="username"
+          />
+        </div>
+        <div class="input-box">
+          <span class="details">Email</span>
+          <input
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+            [(ngModel)]="newUser.email"
+            name="email"
+            required
+          />
+        </div>
+        <div class="input-box">
+          <span class="details">Password</span>
+          <input
+            id="password"
+            type="password"
+            placeholder="Enter your password"
+            [(ngModel)]="newUser.password"
+            name="password"
+            required
+            autocomplete="new-password"
+          />
+        </div>
+        <div class="profile-picture">
+          <span class="profile">Profile Picture</span>
+          <input
+            type="file"
+            (change)="onFileSelected($event)"
+            required
+            title="Profile Picture"
+            placeholder="Select your profile picture"
+          />
+        </div>
+      </div>
+
+      <div class="button">
+        <input type="submit" value="CREATE ACCOUNT" />
+      </div>
+    </form>
+
+    <span class="login-subtitle">Already have an account? <a routerLink="/login" class="signup-link">Sign in</a></span>
+
+  </div>
+</div>

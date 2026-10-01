@@ -1,0 +1,129 @@
+.call-container {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(145deg, #1e88e5, #90a4ae);
+  color: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #fff;
+}
+
+.phone-display {
+  margin-bottom: 25px;
+}
+
+input {
+  width: 100%;
+  padding: 18px;
+  font-size: 24px;
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #1e88e5;
+  outline: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: #1e88e5;
+}
+
+input:focus {
+  background: #e3f2fd;
+  border-color: #1e88e5;
+}
+
+.keypad {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.key-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+button {
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #1e88e5, #90a4ae);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #64b5f6, #b0bec5);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: scale(1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button small {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+button:last-child {
+  background: linear-gradient(135deg, #e53935, #b71c1c);
+}
+
+button:last-child:hover {
+  background: linear-gradient(135deg, #ef5350, #c62828);
+}
+
+.call-button {
+  width: 100px;
+  height: 100px;
+  font-size: 32px;
+  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  color: #fff;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.call-button:hover {
+  transform: scale(1.2);
+  background: linear-gradient(135deg, #90a4ae, #64b5f6);
+}
+
+.call-button:active {
+  transform: scale(1);
+}
+
+.status {
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 8px;
+}
